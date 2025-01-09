@@ -1,68 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lennis</title>
-    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body::-webkit-scrollbar {
-            display: none;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: repeat(20, 1fr);
-            overflow: hidden;
-            gap: 10px;
-        }
-        .grid-item {
-            grid-column: var(--c);
-            grid-row: var(--r);
-        }
-        .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
-    
+    <title>Shimmering Badge Component</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-    <div class="w-full bg-zinc-800">
-        <div class="grid-container">
-            <div class="grid-item elem" style="--r: 1 / span 1; --c: 3 / span 1;"><img src="img9.jpg" alt="Image 1"></div>
-            <div class="grid-item elem" style="--r: 1 / span 1; --c: 7 / span 1;"><img src="img8.jpg" alt="Image 2"></div>
-            <div class="grid-item elem" style="--r: 2 / span 1; --c: 1 / span 1;"><img src="img3.jpg" alt="Image 3"></div>
-            <div class="grid-item elem" style="--r: 2 / span 1; --c: 5 / span 1;"><img src="img4.jpg" alt="Image 4"></div>
-            <div class="grid-item elem" style="--r: 3 / span 1; --c: 2 / span 1;"><img src="img5.jpg" alt="Image 5"></div>
-            <div class="grid-item elem" style="--r: 3 / span 1; --c: 6 / span 1;"><img src="img6.jpg" alt="Image 6"></div>
-            <div class="grid-item elem" style="--r: 4 / span 1; --c: 4 / span 1;"><img src="img11.jpg" alt="Image 7"></div>
-            <div class="grid-item elem" style="--r: 4 / span 1; --c: 8 / span 1;"><img src="img8.jpg" alt="Image 8"></div>
-            <div class="grid-item elem" style="--r: 5 / span 1; --c: 1 / span 1;"><img src="img9.jpg" alt="Image 9"></div>
-            <div class="grid-item elem" style="--r: 5 / span 1; --c: 7 / span 1;"><img src="img10.jpg" alt="Image 10"></div>
-            <div class="grid-item elem" style="--r: 6 / span 1; --c: 3 / span 1;"><img src="img11.jpg" alt="Image 11"></div>
-            <div class="grid-item elem" style="--r: 6 / span 1; --c: 5 / span 1;"><img src="img18.jpg" alt="Image 12"></div>
-            <div class="grid-item elem" style="--r: 7 / span 1; --c: 2 / span 1;"><img src="img13.jpg" alt="Image 13"></div>
-            <div class="grid-item elem" style="--r: 7 / span 1; --c: 6 / span 1;"><img src="img14.jpg" alt="Image 14"></div>
-            <div class="grid-item elem" style="--r: 8 / span 1; --c: 4 / span 1;"><img src="img15.jpg" alt="Image 15"></div>
-            <div class="grid-item elem" style="--r: 8 / span 1; --c: 8 / span 1;"><img src="img16.jpg" alt="Image 16"></div>
-            <div class="grid-item elem" style="--r: 9 / span 1; --c: 1 / span 1;"><img src="img3.jpg" alt="Image 17"></div>
-            <div class="grid-item elem" style="--r: 9 / span 1; --c: 7 / span 1;"><img src="img18.jpg" alt="Image 18"></div>
-            <div class="grid-item elem" style="--r: 10 / span 1; --c: 3 / span 1;"><img src="img19.jpg" alt="Image 19"></div>
-            <div class="grid-item elem" style="--r: 10 / span 1; --c: 5 / span 1;"><img src="img20.jpg" alt="Image 20"></div>
-        </div>
-        <div class="fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center  text-white">
-            <h1 class="text-6xl mb-4">Childhood Memories</h1>
-            <h2 class="text-4xl">By Siddharth</h2>
-        </div>                               
-    </div>
-      
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>      
-    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script> 
-    <script src="script.js"></script>
+    <header>
+        <h1>✨ Shimmering Badge Component</h1>
+        <p class="subtitle">A beautiful, animated badge component for your web projects</p>
+        <p class="subtitle" style="font-size: 0.9rem; margin-top: 0.5rem;">
+            ✨ Supports light and dark modes based on your system preferences
+        </p>
+    </header>
+
+    <main>
+        <section class="demo-section">
+            <h2>Live Demo</h2>
+            <div class="demo-container">
+                <div class="box">
+                    <div class="badge" role="status">New</div>
+                    <p>This is a sample paragraph showing how the badge appears on content. The badge will overlay nicely on the top-right corner of any container element.</p>
+                </div>
+                
+                <div class="box">
+                    <div class="badge" role="status">Featured</div>
+                    <p>Here's another example with different badge text. You can customize the badge text and styling to match your needs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="usage-section">
+            <h2>How to Use</h2>
+            <div class="code-container">
+                <h3>HTML</h3>
+                <pre><code class="language-html">
+&lt;div class="box"&gt;
+    &lt;div class="badge" role="status"&gt;New&lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+
+                <h3>CSS</h3>
+                <pre><code class="language-css">
+.box {
+    position: relative;
+    padding: 20px;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+                </code></pre>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <h2>✨ Features</h2>
+            <ul>
+                <li>
+                    <span style="font-size: 2rem;">✨</span>
+                    <h3>Smooth Animation</h3>
+                    <p>Beautiful shimmer effect with smooth transitions</p>
+                </li>
+                <li>
+                    <span style="font-size: 2rem;">🎨</span>
+                    <h3>Customizable</h3>
+                    <p>Easy to modify colors and styles to match your brand</p>
+                </li>
+                <li>
+                    <span style="font-size: 2rem;">📱</span>
+                    <h3>Responsive</h3>
+                    <p>Works perfectly on all screen sizes</p>
+                </li>
+                <li>
+                    <span style="font-size: 2rem;">♿</span>
+                    <h3>Accessible</h3>
+                    <p>Built with accessibility in mind</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Designed and built with ❤️ for the web community</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Feel free to use this component in your projects!</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
 </body>
+
 </html>
